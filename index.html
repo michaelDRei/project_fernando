@@ -1,0 +1,545 @@
+<html>
+  <head>
+    <title>Análise Grafoscópia</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+    <script src="js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <script src="js/alert.js"></script>
+    <script src="js/app.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="#">Gerar Gráficos <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link active" href="#">Gerar PDF <span class="sr-only">(current)</span></a>
+				</div>
+			</div>
+		</nav>
+
+		<table class="table table-bordered text-center mt-4">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">ANALISES</th>
+					<th scope="col">PADRÃO</th>
+					<th scope="col">QUESTIONADO</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="bg-primary"><b>SUBJETIVAS</b></td>
+					<td class="bg-primary"></td>
+					<td class="bg-primary"></td>
+				</tr>
+				<tr>
+					<td><button class="alert_img" onclick="alert_image('Ritmo')">Ritmo</button></td>
+					<td>
+            <select id="ritmo" name="ritmo" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="fraco">Fraco</option>
+              <option value="medio">Médio</option>
+              <option value="forte">Forte</option>
+            </select>
+          </td>
+					<td>
+            <select id="ritmo2" name="ritmo2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="fraco">Fraco</option>
+              <option value="medio">Médio</option>
+              <option value="forte">Forte</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Dinamismo</td>
+					<td>
+            <select id="dinamismo" name="dinamismo" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="basico">Basico</option>
+              <option value="medio">Médio</option>
+              <option value="forte">Forte</option>
+            </select>
+          </td>
+					<td>
+            <select id="dinamismo2" name="dinamismo2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="basico">Basico</option>
+              <option value="medio">Médio</option>
+              <option value="forte">Forte</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Velocidade</td>
+					<td>
+            <select id="velocidade" name="velocidade" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="lenta">Lenta</option>
+              <option value="moderada">Moderada</option>
+              <option value="rápida">Rápida</option>
+            </select>
+          </td>
+					<td>
+            <select id="velocidade2" name="velocidade2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="lenta">Lenta</option>
+              <option value="moderada">Moderada</option>
+              <option value="rápida">Rápida</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Habilidade</td>
+					<td>
+            <select id="habilidade" name="habilidade" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="rustico">Rustica</option>
+              <option value="canhestra">Canhestra</option>
+              <option value="escolar média">Escolar Média</option>
+              <option value="madura secundaria">Madura Secundaria</option>
+              <option value="patológica">Patológica</option>
+            </select>
+          </td>
+					<td>
+            <select id="habilidade2" name="habilidade2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="rustico">Rustica</option>
+              <option value="canhestra">Canhestra</option>
+              <option value="escolar média">Escolar Média</option>
+              <option value="madura secundaria">Madura Secundaria</option>
+              <option value="patológica">Patológica</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td class="bg-primary"><b>OBJETIVAS</b></td>
+					<td class="bg-primary"></td>
+					<td class="bg-primary"></td>
+				</tr>
+				<tr>
+					<td>Letra</td>
+					<td>
+            <select id="letra" name="letra" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="imprensa">Imprensa</option>
+              <option value="cursiva">Cursiva</option>
+              <option value="polimorfismo">Polimorfismo</option>
+            </select>
+          </td>
+					<td>
+            <select id="letra2" name="letra2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="imprensa">Imprensa</option>
+              <option value="cursiva">Cursiva</option>
+              <option value="polimorfismo">Polimorfismo</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Ataque</td>
+					<td>
+            <select id="ataque" name="ataque" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="ensaiado">Ensaiado</option>
+              <option value="não apoiado">Não apoiado</option>
+              <option value="apoiado">Apoiado</option>
+              <option value="arpão">Arpão</option>
+              <option value="em gancho">Em gancho</option>
+              <option value="infinito">Infinito</option>
+              <option value="em ponto de repouso">Em ponto de repouso</option>
+            </select>
+          </td>
+					<td>
+            <select id="ataque2" name="ataque2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="ensaiado">Ensaiado</option>
+              <option value="não apoiado">Não apoiado</option>
+              <option value="apoiado">Apoiado</option>
+              <option value="arpão">Arpão</option>
+              <option value="em gancho">Em gancho</option>
+              <option value="infinito">Infinito</option>
+              <option value="em ponto de repouso">Em ponto de repouso</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Remate</td>
+					<td>
+            <select id="remate" name="remate" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="ensaiado">Ensaiado</option>
+              <option value="não apoiado">Não apoiado</option>
+              <option value="apoiado">Apoiado</option>
+              <option value="arpão">Arpão</option>
+              <option value="em gancho">Em gancho</option>
+              <option value="infinito">Infinito</option>
+              <option value="em ponto de repouso">Em ponto de repouso</option>
+            </select>
+          </td>
+            <td>
+              <select id="remate2" name="remate2" class="custom-select" style="width:200px;">
+                <option value=""></option>
+                <option value="ensaiado">Ensaiado</option>
+                <option value="não apoiado">Não apoiado</option>
+                <option value="apoiado">Apoiado</option>
+                <option value="arpão">Arpão</option>
+                <option value="em gancho">Em gancho</option>
+                <option value="infinito">Infinito</option>
+                <option value="em ponto de repouso">Em ponto de repouso</option>
+              </select>
+            </td>
+				</tr>
+				<tr>
+					<td>Gramas (forma)</td>
+					<td>
+            <select id="gramas_form" name="gramas_form" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="retilíneo">Retilíneo</option>
+              <option value="curvílineo">Curvilíneo</option>
+              <option value="circular">Circular</option>
+              <option value="sinuoso">Sinuoso</option>
+              <option value="presilha">Presilha</option>
+              <option value="platô">Platô</option>
+            </select>
+          </td>
+					<td>
+            <select id="gramas_form2" name="gramas_form2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="retilíneo">Retilíneo</option>
+              <option value="curvílineo">Curvilíneo</option>
+              <option value="circular">Circular</option>
+              <option value="sinuoso">Sinuoso</option>
+              <option value="presilha">Presilha</option>
+              <option value="platô">Platô</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Gramas (posição)</td>
+					<td>
+            <select id="gramas_posicao" name="gramas_posicao" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="não passante">Não passante</option>
+              <option value="passante superior">Passante Superior</option>
+              <option value="passante inferior">Passante Inferior</option>
+              <option value="duplo passante">Duplo Passante</option>
+            </select>
+          </td>
+					<td>
+            <select id="gramas_posicao2" name="gramas_posicao2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="não passante">Não passante</option>
+              <option value="passante superior">Passante Superior</option>
+              <option value="passante inferior">Passante Inferior</option>
+              <option value="duplo passante">Duplo Passante</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Hábitos gráficos</td>
+					<td>
+            <select id="habitos_graficos" name="habitos_graficos" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="traços ornamentais">Traços Ornamentais</option>
+              <option value="linhas de impulso">Linhas de Impulso</option>
+              <option value="cetras">Cetras</option>
+              <option value="helicoidal">Helicoidal</option>
+              <option value="esquirolas">Esquírolas</option>
+              <option value="mínimo grafico">Mínimo Grafico</option>
+            </select>
+          </td>
+					<td>
+            <select id="habitos_graficos2" name="habitos_graficos2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="traços ornamentais">Traços Ornamentais</option>
+              <option value="linhas de impulso">Linhas de Impulso</option>
+              <option value="cetras">Cetras</option>
+              <option value="helicoidal">Helicoidal</option>
+              <option value="esquirolas">Esquírolas</option>
+              <option value="mínimo grafico">Mínimo Grafico</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Trajetoria</td>
+					<td>
+            <select id="trajetoria" name="trajetoria" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="sinistro-destro">Sinistro-destro</option>
+              <option value="destro-sinistro">Destro-Sinistro</option>
+              <option value="horário">Horário</option>
+              <option value="anti-horário">Anti-horário</option>
+            </select>
+          </td>
+					<td>
+            <select id="trajetoria2" name="trajetoria2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="sinistro-destro">Sinistro-destro</option>
+              <option value="destro-sinistro">Destro-Sinistro</option>
+              <option value="horário">Horário</option>
+              <option value="anti-horário">Anti-horário</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Espontaneidade</td>
+					<td>
+            <select id="espontaneidade" name="espontaneidade" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="fluída">Fluída</option>
+              <option value="trêmula">Trêmula</option>
+            </select>
+          </td>
+					<td>
+            <select id="espontaneidade2" name="espontaneidade2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="fluída">Fluída</option>
+              <option value="trêmula">Trêmula</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Traços de ligação</td>
+					<td>
+            <select id="tracos_ligacao" name="tracos_ligacao" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="por baixo">Por baixo</option>
+              <option value="ao centro">Ao centro</option>
+              <option value="por cima">Por cima</option>
+            </select>
+          </td>
+					<td>
+            <select id="tracos_ligacao2" name="tracos_ligacao2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="por baixo">Por baixo</option>
+              <option value="ao centro">Ao centro</option>
+              <option value="por cima">Por cima</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Alinhamento</td>
+					<td>
+            <select id="alinhamento" name="alinhamento" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="horizontal">Horizontal</option>
+              <option value="ascendente">Ascendente</option>
+              <option value="arqueado">Arqueado</option>
+              <option value="sinuoso">Sinuoso</option>
+            </select>
+          </td>
+					<td>
+            <select id="alinhamento2" name="alinhamento2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="horizontal">Horizontal</option>
+              <option value="ascendente">Ascendente</option>
+              <option value="arqueado">Arqueado</option>
+              <option value="sinuoso">Sinuoso</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Momentos gráficos</td>
+					<td>
+            <select id="momentos_graficos" name="momentos_graficos" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+					<td>
+            <select id="momentos_graficos2" name="momentos_graficos2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Espaçamentos gráficos</td>
+					<td>
+            <select id="espaçamentos_graficos" name="espaçamentos_graficos" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="curto">Curto</option>
+              <option value="médio">Médio</option>
+              <option value="longo">Longo</option>
+            </select>
+          </td>
+					<td>
+            <select id="espaçamentos_graficos2" name="espaçamentos_graficos2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="curto">Curto</option>
+              <option value="médio">Médio</option>
+              <option value="longo">Longo</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Inclinação axial</td>
+					<td>
+            <select id="inclinacao_axial" name="inclinacao_axial" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="vertical">Vertical</option>
+              <option value="dextrogira">Dextrogira</option>
+              <option value="sinistrógira">Sinistrógira</option>
+              <option value="mista">Mista</option>
+            </select>
+          </td>
+					<td>
+            <select id="inclinacao_axial2" name="inclinacao_axial2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="vertical">Vertical</option>
+              <option value="dextrogira">Dextrogira</option>
+              <option value="sinistrógira">Sinistrógira</option>
+              <option value="mista">Mista</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Proporcionalidade</td>
+					<td>
+            <select id="proporcionalidade" name="proporcionalidade" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="baixa">Baixa</option>
+              <option value="média">Média</option>
+              <option value="alta">Alta</option>
+            </select>
+          </td>
+					<td>
+            <select id="proporcionalidade2" name="proporcionalidade2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="baixa">Baixa</option>
+              <option value="média">Média</option>
+              <option value="alta">Alta</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Calibre</td>
+					<td>
+            <select id="calibre" name="calibre" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="pequeno">Pequeno</option>
+              <option value="médio">Médio</option>
+              <option value="grande">Grande</option>
+            </select>
+          </td>
+					<td>
+            <select id="calibre2" name="calibre2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="pequeno">Pequeno</option>
+              <option value="médio">Médio</option>
+              <option value="grande">Grande</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Pressão</td>
+					<td>
+            <select id="pressao" name="pressao" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="fraca">Fraca</option>
+              <option value="média">Média</option>
+              <option value="forte">Forte</option>
+            </select>
+          </td>
+					<td>
+            <select id="pressao2" name="pressao2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="fraca">Fraca</option>
+              <option value="média">Média</option>
+              <option value="forte">Forte</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Gladiolagem</td>
+					<td>
+            <select id="gladiolagem" name="gladiolagem" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="constante">Constante</option>
+              <option value="positiva">Positiva</option>
+              <option value="negativa">Negativa</option>
+            </select>
+          </td>
+					<td>
+            <select id="gladiolagem2" name="gladiolagem2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="constante">Constante</option>
+              <option value="positiva">Positiva</option>
+              <option value="negativa">Negativa</option>
+            </select>
+          </td>
+				</tr>
+				<tr>
+					<td>Tendência de punho</td>
+					<td>
+            <select id="tendencia_de_punho" name="tendencia_de_punho" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="angulosidade">Angulosidade</option>
+              <option value="arcada">Arcada</option>
+              <option value="guirlanda">Guirlanda</option>
+              <option value="mista">Mista</option>
+            </select>
+          </td>
+					<td>
+            <select id="tendencia_de_punho2" name="tendencia_de_punho2" class="custom-select" style="width:200px;">
+              <option value=""></option>
+              <option value="angulosidade">Angulosidade</option>
+              <option value="arcada">Arcada</option>
+              <option value="guirlanda">Guirlanda</option>
+              <option value="mista">Mista</option>
+            </select>
+          </td>
+				</tr>
+				<tr class="thead-dark">
+					<th scope="col"> </th>
+					<th scope="col">CONVERGÊNCIA</th>
+					<th scope="col">DIVERGÊNCIA</th>
+				</tr>
+				<tr>
+					<td class="bg-primary"><b>QUANTIDADE</b></td>
+					<td class="bg-primary"><p id="convergencia">0</p></td>
+					<td class="bg-primary"><p id="divergencia">0</p></td>
+				</tr>
+				<tr>
+					<td class="bg-primary"><b>PERCENTUAL</b></td>
+					<td class="bg-primary"><p id="percentual_convergencia">0</p></td>
+					<td class="bg-primary"><p id="percentual_divergencia">0</p></td>
+				</tr>
+			</tbody>
+		</table>
+    <div class="container d-flex justify-content-center flex-nowrap">
+			<button type="button" onclick="result()" class="btn btn-outline-primary btn-lg">GERAR RESULTADO FINAL</button>
+	  </div>
+
+    <div id="resultado" class="mt-4 container d-flex justify-content-center flex-nowrap">
+    </div>
+		<br>
+		<br>
+		<br>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>
